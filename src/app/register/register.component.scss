@@ -41,3 +41,9 @@
     border-bottom-right-radius: 15px;
     }
     }
+
+
+    input.ng-invalid.ng-touched{
+      border: pink 1px solid;
+      
+    }

@@ -1,4 +1,4 @@
-<form #form="ngForm" (ngSubmit)="userRegister(form)">
+<form (ngSubmit)="userRegister()" [formGroup]="form">
     <section class="h-100 h-custom gradient-custom-2">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center
@@ -8,13 +8,16 @@
                         style="border-radius: 15px;">
                         <div class="card-body p-0">
                             <div class="row g-0">
+
+
                                 <div class="col-lg-6">
+
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5" style="color:
                                             #4835d4;">General Infomation</h3>
                                         <div class="row">
                                             <div class="col-md-6 mb-4 pb-2">
-                                                <div class="form-outline">
+                                                <div class="form-group">
                                                     <input type="text"
                                                         class="form-control
                                                         form-control-lg"
@@ -22,13 +25,11 @@
                                                         ngModel
                                                         name="first_name"
                                                         [(ngModel)]="client.first_name"
-                                                        #first_name="ngModel"
-                                                        required
+                                                        formControlName="first_name"
                                                         />
                                                     <label class="form-label">First
                                                         name</label>
                                                 </div>
-
                                             </div>
                                             <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
@@ -38,15 +39,14 @@
                                                         id="last_name"
                                                         ngModel name="last_name"
                                                         [(ngModel)]="client.last_name"
-                                                        #last_name="ngModel"
-                                                        required
+                                                        formControlName="last_name"
                                                         />
                                                     <label class="form-label">Last
                                                         name</label>
                                                 </div>
-
                                             </div>
                                         </div>
+
 
 
                                         <div class="mb-4 pb-2">
@@ -56,12 +56,14 @@
                                                     form-control-lg" id="email"
                                                     ngModel name="email"
                                                     [(ngModel)]="client.email"
-                                                    #email="ngModel"
-                                                    required
+                                                    formControlName="email"
+
                                                     />
                                                 <label class="form-label">Email</label>
                                             </div>
                                         </div>
+
+
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
@@ -71,13 +73,14 @@
                                                     id="passowrd"
                                                     ngModel name="passowrd"
                                                     [(ngModel)]="client.password"
-                                                    #password="ngModel"
-                                                    required
+                                                    formControlName="password"
                                                     />
-
                                                 <label class="form-label">Password</label>
                                             </div>
                                         </div>
+
+
+
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
@@ -88,17 +91,19 @@
                                                     ngModel
                                                     name="confirme_password"
                                                     [(ngModel)]="client.confirme_password"
-                                                    #confirme_password="ngModel"
-                                                    required
+                                                    formControlName="confirme_password"
                                                     />
                                                 <label class="form-label">Confirme
                                                     Password</label>
                                             </div>
                                         </div>
+
+
+
+
                                         <div class="row">
                                             <div class="col-md-6 mb-4 pb-2
                                                 mb-md-0 pb-md-0">
-
                                                 <div class="form-outline">
                                                     <input type="text"
                                                         class="form-control
@@ -107,13 +112,11 @@
                                                         ngModel
                                                         name="pharmacy_name"
                                                         [(ngModel)]="client.pharmacy_name"
-                                                        #store_name="ngModel"
-                                                        required
+                                                        formControlName="pharmacy_name"
                                                         />
                                                     <label class="form-label">Pharmacy
                                                         Name</label>
                                                 </div>
-
                                             </div>
                                             <div class="col-md-6">
 
@@ -121,8 +124,7 @@
                                                     ngModel name="employes"
                                                     id="employes"
                                                     [(ngModel)]="client.employes"
-                                                    #employes="ngModel"
-                                                    required>
+                                                    formControlName="employes">
                                                     <option selected>Employes</option>
                                                     <option value=1>One</option>
                                                     <option value=2>Two</option>
@@ -132,13 +134,17 @@
 
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
+
+
+
+
                                 <div class="col-lg-6 bg-indigo text-white">
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5">Details
                                             Information</h3>
+
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline
@@ -148,14 +154,15 @@
                                                     form-control-lg" id="street"
                                                     ngModel name="street"
                                                     [(ngModel)]="client.street"
-                                                    #street="ngModel"
-                                                    required
+                                                    formControlName="street"
                                                     />
 
                                                 <label class="form-label">Street
                                                 </label>
                                             </div>
                                         </div>
+
+
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline
@@ -165,13 +172,15 @@
                                                     form-control-lg" id="info"
                                                     ngModel name="info"
                                                     [(ngModel)]="client.info"
-                                                    #info="ngModel"
-                                                    required
+                                                    formControlName="info"
                                                     />
                                                 <label class="form-label">Additional
                                                     Information</label>
                                             </div>
                                         </div>
+
+
+
 
                                         <div class="row">
                                             <div class="col-md-5 mb-4 pb-2">
@@ -183,14 +192,14 @@
                                                         id="zipcode"
                                                         ngModel name="zipcode"
                                                         [(ngModel)]="client.zipcode"
-                                                        #zipcode="ngModel"
-                                                        required
+                                                        formControlName="zipcode"
                                                         />
                                                     <label class="form-label">Zip
                                                         Code</label>
                                                 </div>
-
                                             </div>
+
+
                                             <div class="col-md-7 mb-4 pb-2">
                                                 <div class="form-outline
                                                     form-white">
@@ -200,12 +209,10 @@
                                                         id="willaya"
                                                         ngModel name="willaya"
                                                         [(ngModel)]="client.willaya"
-                                                        #willaya="ngModel"
-                                                        required
+                                                        formControlName="willaya"
                                                         />
                                                     <label class="form-label">Willaya</label>
                                                 </div>
-
                                             </div>
                                         </div>
 
@@ -219,13 +226,16 @@
                                                     form-control-lg" id="phone"
                                                     ngModel name="phone"
                                                     [(ngModel)]="client.phone"
-                                                    #phone="ngModel"
-                                                    required
+                                                    formControlName="phone"
+
                                                     />
                                                 <label class="form-label">phone
                                                     Number</label>
                                             </div>
                                         </div>
+
+
+
 
                                         <div class="form-check d-flex
                                             justify-content-start mb-4 pb-3">
@@ -241,7 +251,14 @@
                                             btn-light btn-lg">Register</button>
                                     </div>
                                 </div>
+
+
+
+
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
