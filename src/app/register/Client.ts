@@ -1,14 +1,12 @@
 export class Client{
-first_name!:string
-last_name!:string
+fname!:string
+lname!:string
 email!:string
 password !:string
-confirme_password !:string
-pharmacy_name!:string
-employes!:number
-street!:string
-info!:string
-zipcode!:string
+confirmePassword !:string
+pharmaName!:string
+employees!:number
+address!:string
 willaya!:string
 phone!:string
 longitude!:number

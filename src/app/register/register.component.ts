@@ -1,65 +1,85 @@
-import { Component, OnInit} from '@angular/core';
-import { NgForm,FormBuilder, FormGroup, FormControl, Validators ,AbstractControl} from '@angular/forms';
-import { Client } from './Client';
-import { ServiceRegisterService } from './Services/service-register.service';
-
+import { Component, OnInit } from "@angular/core";
+import {
+  NgForm,
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  Validators,
+  AbstractControl,
+} from "@angular/forms";
+import { Client } from "./Client";
+import { ServiceRegisterService } from "./Services/service-register.service";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.scss"],
 })
-
 export class RegisterComponent implements OnInit {
+  client: Client = new Client();
+  form!: FormGroup;
 
-client:Client=new Client();
-form!:FormGroup;
+  constructor(
+    private serviceRegister: ServiceRegisterService,
 
-  constructor(private serviceRegister:ServiceRegisterService, private formBuilder:FormBuilder) {
-    
-   }
+  ) {}
 
   ngOnInit(): void {
-this.form=new FormGroup({
-  first_name:new FormControl(null,Validators.required),
- last_name:new FormControl(null,Validators.required),
-  email:new FormControl(null,[Validators.required,Validators.email]),
-  password:new FormControl(null,Validators.required),
-  confirme_password:new FormControl(null,Validators.required),
-  pharmacy_name:new FormControl(null,Validators.required),
-  employes:new FormControl(null),
-  street:new FormControl(null),
-  info:new FormControl(null),
-  zipcode:new FormControl(null,Validators.required),
-  willaya:new FormControl(null,Validators.required),
-  phone:new FormControl(null,Validators.required),
+    this.form = new FormGroup({
+      fname: new FormControl("", [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      lname: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
 
 
-})
-
-    
-    
-    
-    this.serviceRegister.getLocation().then(res=>{
-      this.client.latitude=res.lat;
-      this.client.longitude=res.lng;
-    })
+      ]),
+      confirmePassword: new FormControl('', Validators.required),
+      pharmaName: new FormControl('', Validators.required),
+      employees: new FormControl(''),
+      address: new FormControl('',Validators.required),
+      willaya: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+    }
+    ,
+    [this.serviceRegister.matchValidator('password','confirmePassword')]);
+  
+this.getlocation();
 
   }
- 
-  userRegister(){
-//console.log(this.form)
-console.log(this.client)
 
-
-/* 
- this.serviceRegister.registerUser(this.client).subscribe(data=>{
-      alert('successfully registration')
-    },error=>{
-      alert('try again ')}
-    )*/ 
-  } 
-
-
-
+  getlocation() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+       this.client.longitude = position.coords.longitude;
+        this.client.latitude = position.coords.latitude;
+        
+      },
+      function errorCallback(error) {
+      },
+      {
+        timeout: 5000,
+      }
+    );
+    
+  }
+  userRegister() {
+     if (this.form.valid == true) {
+      this.serviceRegister.registerUser(this.client).subscribe((data) => {
+        console.log(this.client);
+        alert("successfully registration");
+      });
+    }
+    if (this.form.invalid == true ) {
+      alert("complete your form or check your password");
+    } 
+    console.log( this.form)
+   
+  }
 }

@@ -4,28 +4,29 @@
             <div class="row d-flex justify-content-center align-items-center
                 h-100">
                 <div class="col-12">
-                    <div class="card card-registration card-registration-2"
-                        style="border-radius: 15px;">
+                    <div
+                        class="card card-registration card-registration-2"
+                        style="border-radius: 15px">
                         <div class="card-body p-0">
                             <div class="row g-0">
-
-
                                 <div class="col-lg-6">
-
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5" style="color:
-                                            #4835d4;">General Infomation</h3>
+                                            #4572bf">
+                                            Sign up
+                                        </h3>
                                         <div class="row">
                                             <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-group">
-                                                    <input type="text"
+                                                    <input
+                                                        type="text"
                                                         class="form-control
                                                         form-control-lg"
-                                                        id="first_name"
+                                                        id="fname"
                                                         ngModel
-                                                        name="first_name"
-                                                        [(ngModel)]="client.first_name"
-                                                        formControlName="first_name"
+                                                        name="fname"
+                                                        [(ngModel)]="client.fname"
+                                                        formControlName="fname"
                                                         />
                                                     <label class="form-label">First
                                                         name</label>
@@ -33,13 +34,15 @@
                                             </div>
                                             <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <input type="text"
+                                                    <input
+                                                        type="text"
                                                         class="form-control
                                                         form-control-lg"
-                                                        id="last_name"
-                                                        ngModel name="last_name"
-                                                        [(ngModel)]="client.last_name"
-                                                        formControlName="last_name"
+                                                        id="lname"
+                                                        ngModel
+                                                        name="lname"
+                                                        [(ngModel)]="client.lname"
+                                                        formControlName="lname"
                                                         />
                                                     <label class="form-label">Last
                                                         name</label>
@@ -47,31 +50,31 @@
                                             </div>
                                         </div>
 
-
-
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
-                                                <input type="email"
+                                                <input
+                                                    type="email"
                                                     class="form-control
-                                                    form-control-lg" id="email"
-                                                    ngModel name="email"
+                                                    form-control-lg"
+                                                    id="email"
+                                                    ngModel
+                                                    name="email"
                                                     [(ngModel)]="client.email"
                                                     formControlName="email"
-
                                                     />
                                                 <label class="form-label">Email</label>
                                             </div>
                                         </div>
 
-
-
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
-                                                <input type="password"
+                                                <input
+                                                    type="password"
                                                     class="form-control
                                                     form-control-lg"
                                                     id="passowrd"
-                                                    ngModel name="passowrd"
+                                                    ngModel
+                                                    name="passowrd"
                                                     [(ngModel)]="client.password"
                                                     formControlName="password"
                                                     />
@@ -79,186 +82,139 @@
                                             </div>
                                         </div>
 
-
-
-
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
-                                                <input type="password"
+                                                <input
+                                                    type="password"
                                                     class="form-control
                                                     form-control-lg"
-                                                    id="confirme_password"
+                                                    id="confirmePassword"
                                                     ngModel
-                                                    name="confirme_password"
-                                                    [(ngModel)]="client.confirme_password"
-                                                    formControlName="confirme_password"
+                                                    name="confirmePassword"
+                                                    [(ngModel)]="client.confirmePassword"
+                                                    formControlName="confirmePassword"
                                                     />
                                                 <label class="form-label">Confirme
                                                     Password</label>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
 
-
-
+                                <div class="col-lg-6 bg-indigo text-white">
+                                    <div class="p-5">
+                                        <h3 class="fw-normal mb-5">General
+                                            Informations</h3>
 
                                         <div class="row">
                                             <div class="col-md-6 mb-4 pb-2
-                                                mb-md-0 pb-md-0">
+                                                mb-md-4 pb-md-1">
                                                 <div class="form-outline">
-                                                    <input type="text"
+                                                    <input
+                                                        type="text"
                                                         class="form-control
                                                         form-control-lg"
-                                                        id="pharmacy_name"
+                                                        id="pharmaName"
                                                         ngModel
-                                                        name="pharmacy_name"
-                                                        [(ngModel)]="client.pharmacy_name"
-                                                        formControlName="pharmacy_name"
+                                                        name="pharmaName"
+                                                        [(ngModel)]="client.pharmaName"
+                                                        formControlName="pharmaName"
                                                         />
                                                     <label class="form-label">Pharmacy
                                                         Name</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-
-                                                <select class="select"
-                                                    ngModel name="employes"
-                                                    id="employes"
-                                                    [(ngModel)]="client.employes"
-                                                    formControlName="employes">
-                                                    <option selected>Employes</option>
-                                                    <option value=1>One</option>
-                                                    <option value=2>Two</option>
-                                                    <option value=3>Three</option>
-                                                    <option value=4>Four</option>
+                                                <label class="form-label">Employes
+                                                </label>
+                                                <select
+                                                    class="select"
+                                                    ngModel
+                                                    name="employees"
+                                                    id="employees"
+                                                    [(ngModel)]="client.employees"
+                                                    formControlName="employees">
+                                                    <option [ngValue]="1">One</option>
+                                                    <option [ngValue]="2">Two</option>
+                                                    <option [ngValue]="3">Three</option>
+                                                    <option [ngValue]="4">Four</option>
+                                                    <option [ngValue]="5">five</option>
+                                                    <option [ngValue]="6">six</option>
                                                 </select>
-
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="col-lg-6 bg-indigo text-white">
-                                    <div class="p-5">
-                                        <h3 class="fw-normal mb-5">Details
-                                            Information</h3>
-
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline
                                                 form-white">
-                                                <input type="text"
+                                                <input
+                                                    type="text"
                                                     class="form-control
-                                                    form-control-lg" id="street"
-                                                    ngModel name="street"
-                                                    [(ngModel)]="client.street"
-                                                    formControlName="street"
+                                                    form-control-lg"
+                                                    id="address"
+                                                    ngModel
+                                                    name="address"
+                                                    [(ngModel)]="client.address"
+                                                    formControlName="address"
                                                     />
 
-                                                <label class="form-label">Street
+                                                <label class="form-label">Address</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline
+                                                form-white">
+                                                <input
+                                                    type="text"
+                                                    class="form-control
+                                                    form-control-lg"
+                                                    id="willaya"
+                                                    ngModel
+                                                    name="willaya"
+                                                    [(ngModel)]="client.willaya"
+                                                    formControlName="willaya"
+                                                    />
+                                                <label class="form-label">Willaya
                                                 </label>
                                             </div>
                                         </div>
 
-
-
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline
                                                 form-white">
-                                                <input type="text"
+                                                <input
+                                                    type="text"
                                                     class="form-control
-                                                    form-control-lg" id="info"
-                                                    ngModel name="info"
-                                                    [(ngModel)]="client.info"
-                                                    formControlName="info"
-                                                    />
-                                                <label class="form-label">Additional
-                                                    Information</label>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="row">
-                                            <div class="col-md-5 mb-4 pb-2">
-                                                <div class="form-outline
-                                                    form-white">
-                                                    <input type="text"
-                                                        class="form-control
-                                                        form-control-lg"
-                                                        id="zipcode"
-                                                        ngModel name="zipcode"
-                                                        [(ngModel)]="client.zipcode"
-                                                        formControlName="zipcode"
-                                                        />
-                                                    <label class="form-label">Zip
-                                                        Code</label>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-7 mb-4 pb-2">
-                                                <div class="form-outline
-                                                    form-white">
-                                                    <input type="text"
-                                                        class="form-control
-                                                        form-control-lg"
-                                                        id="willaya"
-                                                        ngModel name="willaya"
-                                                        [(ngModel)]="client.willaya"
-                                                        formControlName="willaya"
-                                                        />
-                                                    <label class="form-label">Willaya</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="mb-4 pb-2">
-                                            <div class="form-outline
-                                                form-white">
-                                                <input type="text"
-                                                    class="form-control
-                                                    form-control-lg" id="phone"
-                                                    ngModel name="phone"
+                                                    form-control-lg"
+                                                    id="phone"
+                                                    ngModel
+                                                    name="phone"
                                                     [(ngModel)]="client.phone"
                                                     formControlName="phone"
-
                                                     />
                                                 <label class="form-label">phone
                                                     Number</label>
                                             </div>
                                         </div>
 
-
-
-
-                                        <div class="form-check d-flex
+                                        <div
+                                            class="form-check d-flex
                                             justify-content-start mb-4 pb-3">
                                             <label class="form-check-label
                                                 text-white">You have account ?
                                                 <a href="#!" class="text-white"><u>Log
                                                         In</u></a>
-
                                             </label>
                                         </div>
 
                                         <button type="submit" class="btn
-                                            btn-light btn-lg">Register</button>
+                                            btn-light btn-lg">
+                                            Register
+                                        </button>
                                     </div>
                                 </div>
-
-
-
-
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>

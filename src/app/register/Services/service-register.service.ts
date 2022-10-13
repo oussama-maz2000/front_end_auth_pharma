@@ -1,25 +1,36 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import { Client } from '../Client';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Client } from "../Client";
+import { Observable, timeout } from "rxjs";
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from "@angular/forms";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ServiceRegisterService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-getLocation():Promise<any>{
-  return new Promise((resolve,reject)=>{
-    navigator.geolocation.getCurrentPosition(response=>{
-      resolve({lng:response.coords.longitude,lat:response.coords.latitude})
-    })
-  })
-}
-
-postUrl="http://localhost:8082/register"
-  registerUser(user:Client): Observable<Object> {
-   return this.http.post(`${this.postUrl}`,user);
+  postUrl = "http://localhost:8082/pharmacy/sign up";
+  registerUser(user: Client): Observable<Object> {
+    return this.http.post(`${this.postUrl}`, user);
   }
-  
+
+  matchValidator(source: string, target: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const sourceCntrl = control.get(source);
+      const targetCntrl = control.get(target);
+      return sourceCntrl &&
+        targetCntrl &&
+        sourceCntrl.value !== targetCntrl.value
+        ? { mismatch: true }
+        : null;
+    };
+  }
 }

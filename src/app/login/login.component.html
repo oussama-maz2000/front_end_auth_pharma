@@ -1,0 +1,61 @@
+
+<body>
+
+    <link rel="stylesheet"
+        href="https://cdn.lineicons.com/2.0/LineIcons.css">
+    <div class="demo-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 mx-auto">
+                    <div class="text-center image-size-small
+                        position-relative">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjRDrOzY2q4Y2WjdS90jwcXsgmvmH6iHLJlg&usqp=CAU"
+                            class="rounded-circle p-1 bg-white">
+
+                    </div>
+                    <div class="p-5 bg-white rounded shadow-lg">
+                        <h3 class="mb-2 text-center pt-7">Sign In</h3>
+                        <p class="text-center lead">welcome in your Pharmacy
+                        </p>
+                        <form (ngSubmit)="userLogin()" [formGroup]="form">
+                            <label class="font-500">Email</label>
+                            <input class="form-control
+                                form-control-lg
+                                mb-2"
+                                id="email"
+                                ngModel
+                                [(ngModel)]="client.email"
+                                name="email"
+                                formControlName="email"
+                                type="email">
+                            <label class="font-500">Password</label>
+                            <input class="form-control
+                                form-control-lg"
+                                id="password"
+                                ngModel
+                                [(ngModel)]="client.password"
+                                name="password"
+                                formControlName="password"
+                                type="password">
+                            <p class="m-0 py-4"><a href=""
+                                    class="text-muted">Forget
+                                    password?</a></p>
+                            <button class="btn btn-primary btn-lg w-100
+                                shadow-lg"
+                                type="submit">SIGN
+                                IN</button>
+                        </form>
+                        <div class="text-center pt-4">
+                            <p class="m-0">Do not have an account? <a
+                                    href=""
+                                    class="text-dark font-weight-bold">Sign
+                                    Up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
